@@ -8,6 +8,9 @@
 */
 void swap(int* a, int* b)
 {
+   int *c = a;
+   a = b;
+   b = c;
 
 }
 
@@ -21,8 +24,17 @@ void swap(int* a, int* b)
 */
 char *find_char(char *str, int c)
 {
+    int len = sizeof str - 1;
 
-}
+    for(int i = 0; i < len; i++)
+    {
+        if(*(str + i) == c)
+        {
+            return str;
+        }
+    }
+    return 0;
+}   
 
 /*
     Given an empty (NULL) character pointer x and a character pointer y,
